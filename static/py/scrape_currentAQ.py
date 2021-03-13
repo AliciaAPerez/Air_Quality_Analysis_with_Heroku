@@ -6,33 +6,20 @@ import pandas as pd
 
 # Function for Excel File
 def city_data():
-    # Creating File Path for Excel File
-    filePath = "../Data/CA_Pop_Census_2010_2019_by_city.xlsx"
-    excel_df = pd.DataFrame(pd.read_excel(filePath))
-    
-    # Converting Excel to CSV for Ease
-    excel_df.to_csv ("CA_Pop_Census_2010_2019_by_city.csv",  
-                    index=None,
-                    header=None)
-    
+    # Reading in File
+    filePath = "../Data/ca_sites.csv"
+    f = pd.read_csv(filePath)
     # Creating DataFrame
-    df = pd.DataFrame(pd.read_csv("CA_Pop_Census_2010_2019_by_city.csv"))
+    dfCASites = pd.DataFrame(f)
     
-    # Cleaning CSV
-    # Dropping UnWanted Columns and Indices
-    df = df.drop(columns=["Unnamed: 1", "Unnamed: 2", "Unnamed: 3", "Unnamed: 4", "Unnamed: 5", "Unnamed: 6", "Unnamed: 7",
-                         "Unnamed: 8", "Unnamed: 9", "Unnamed: 10", "Unnamed: 11", "Unnamed: 12"],
-                index=[0,1,484,485,486,487,488])
-    # Renaming Column 0
-    df = df.rename(columns={"Annual Estimates of the Resident Population for Incorporated Places in California: April 1, 2010 to July 1, 2019": "City"})
-    # Parsing City Column
-    df["City"] = df["City"].str.split(",", n=1, expand=True)
-    # Dropping City and Town
-    df["City"] = df["City"].str.split("city", n=1, expand=True)
-    df["City"] = df["City"].str.split("town", n=1, expand=True)
+    # Rename Column
+    dfCASites = dfCASites.rename(columns = {'City Name': 'City'}) 
+    # Drop Duplicates
+    dfCASites = dfCASites.drop_duplicates(subset=['City'])
+
+    city = dfCASites['City'].tolist()
     
-    # Converting df to List
-    return df['City'].tolist()
+    return city 
 
 # Function for Browser
 def init_browser():
@@ -40,9 +27,7 @@ def init_browser():
     executable_path = {'executable_path': "C:/Windows/chromedriver"}
     return Browser('chrome', **executable_path, headless=False)
 
-# Function for Scrape
 def scrape_info():
-    
     # Calling init_browser Function
     browser = init_browser()
     
@@ -92,6 +77,42 @@ def scrape_info():
     # Closing Browser
     browser.quit()
   
-    return currentAQI
-        
-scrape_info()
+    # Creating DataFrame of currentAQI
+    dfAQI = pd.DataFrame(currentAQI)
+    # Removing White Space at the End of City Column
+    dfAQI['City'] = dfAQI['City'].str.strip()
+    
+    # Reading in ca-sites File
+    filePath = "../Data/ca_sites.csv"
+    f = pd.read_csv(filePath)
+    # Creating DataFrame
+    dfCASites = pd.DataFrame(f)
+    # Renaming Column to Help with Merge
+    dfCASites = dfCASites.rename(columns = {'City Name': 'City'}) 
+    # Dropping Duplicates
+    dfCASites = dfCASites.drop_duplicates(subset=['City'])
+    
+    # Merging DataFrames
+    dfMerge = pd.merge(dfCASites, dfAQI, how='left', on='City')
+    # Dropping NaN
+    dfMerge = dfMerge.dropna()
+    
+    # Renaming Column Headers
+    dfMerge = dfMerge.rename(columns={"Defining Site" : "DefiningSite", "Land Use" : "LandUse",
+                                      "Location Setting" : "LocationSetting", "State Name": "StateName", 
+                                      "County Name" : "CountyName", "County Code" : "CountyCode",
+                                     "CBSA Name" : "CBSAName", "Current AQI Value" : "CurrentAQIValue",
+                                     "Current Pollutant" : "CurrentPollutant"})
+    
+    # Creating New CSV
+    dfMerge.to_csv('../Data/currentAQIData.csv')
+
+# We want the scrape_info() to Update Every Hour
+# Use tm.sleep(3600) to achieve this
+# This will continue to run as long as the Server is Open
+def sleeper():
+    scrape_info()
+while True:
+  sleeper()
+  tm.sleep(3600)
+
