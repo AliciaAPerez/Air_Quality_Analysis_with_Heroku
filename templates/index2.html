@@ -4,22 +4,20 @@
 		<meta charset="utf-8">
 		<title>Air Quality</title>
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-		<link rel="stylesheet" type="text/css" href="../static/css/reset.css">
-		<link rel="stylesheet" type="text/css" href="../static/css/index_style.css">
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/reset_style.css') }}">
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/index_style.css') }}">
-		<link rel="apple-touch-icon" sizes="180x180" href="../static/favicon/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="../static/favicon/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="../static/favicon/favicon-16x16.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="../static/favicon/site.webmanifest">
-
-		<link rel="apple-touch-icon" sizes="180x180" href="{{url_for('static', filename='favicon/apple-touch-icon.png') }}">
-		<link rel="icon" type="image/png" sizes="32x32" href="{{url_for('static', filename='favicon/favicon-32x32.png') }}">
-		<link rel="icon" type="image/png" sizes="16x16" href="{{url_for('static', filename='favicon/favicon-16x16.png') }}">
-		<link rel="manifest" href="{{url_for('static', filename='favicon/site.webmanifest') }}">
+		<!-- <link rel="stylesheet" type="text/css" href="../static/css/reset.css">
+		<link rel="stylesheet" type="text/css" href="../static/css/index_style.css"> -->
+		<!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/reset_style.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/index_style.css') }}"> -->
+		<!-- <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"> -->
+		<!-- <link rel="apple-touch-icon" sizes="180x180" href="{{'static', url_for(filename='apple-touch-icon.png') }}">
+		<link rel="icon" type="image/png" sizes="32x32" href="{{'static', url_for(filename='favicon-32x32.png') }}">
+		<link rel="icon" type="image/png" sizes="16x16" href="{{'static', url_for(filename='favicon-16x16.png') }}">
+		<link rel="manifest" href="{{'static', url_for(filename='site.webmanifest') }}"> -->
 	</head>
 	<body>
-		<div class = "container">
+		<!-- <div class = "container">
 			<div class = "row">
 				<div class = "col-md-12">
 					<img width = 100% height = 250px src="{{ url_for('static', filename='images/nature-4260654_1920.jpg') }}" alt="Header Image Sky">
@@ -30,7 +28,7 @@
 		</div>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 			<div class="container-fluid">
-			<a class="navbar-brand" href="{{url_for('static', filename='index.html') }}">Home Page</a>
+			<a class="navbar-brand" href="{{'templates', url_for(filename='index.html') }}">Home Page</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -84,7 +82,7 @@
                             <p>The air quality data was obtained by scraping the airnow.gov website.</p>
 					</div>
 				</div>
-			</div>
+			</div> -->
 
 <!--script for the drop down menu to work -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
