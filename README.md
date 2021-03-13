@@ -4,11 +4,11 @@ Tell your story web visualization Project 2
 ## **Inspiration:**
 >- Analyze Air Quality in California by county & compare to demographic information from the Census data. Information can be useful for businesses to make saftey decisions on outdoor working employee's health.
 
-## **Team members:** *(git repository user name)*
->- **Julia Headlee**  *(julieheadlee)*
->- **Melanie Nolker** *(mnolker)*
->- **Alicia Perez** *(AliciaAPerez)*
->- **Kayla St. Germain** *(KStG1992)*
+## **Team members:** *(Git Hub user name)*
+>- **Julia Headlee**  [Git Hub: julieheadlee](https://github.com/julieheadlee)
+>- **Melanie Nolker** [Git Hub: mnolker](https://github.com/mnolker)
+>- **Alicia Perez** [Git Hub: AliciaAPerez](https://github.com/AliciaAPerez)
+>- **Kayla St. Germain** [Git Hub: KStG1992](https://github.com/KStG1992)
 
 ## **Data sets:**
 >- Air Quality current: https://docs.airnowapi.org/HistoricalObservationsByLatLon/docs

@@ -1,4 +1,4 @@
- /* Container for image and header */
+/* Container for image and header */
 .container {
     position: relative;
     text-align: center;
@@ -6,7 +6,7 @@
     
 }
 
-  /* text in container */
+/* text in container */
 .centered {
     position: absolute;
     top: 50%;
@@ -26,4 +26,17 @@ h1 {
   font-size: 350%;
   font-family: fantasy;
   color: darkblue;
+}
+
+/* remove default margin and padding from body */
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/* set map, body, and html to 100% of the screen size */
+#map,
+body,
+html {
+  height: 100%;
 }

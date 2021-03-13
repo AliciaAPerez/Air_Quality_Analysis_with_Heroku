@@ -21,9 +21,9 @@
 body {background-color:lightblue;}
 
 h1 {
-  position: absolute;
-  left: 1%;
-  font-size: 350%;
-  font-family: fantasy;
-  color: darkblue;
+    position: absolute;
+    left: 1%;
+    font-size: 350%;
+    font-family: fantasy;
+    color: darkblue;
 }
