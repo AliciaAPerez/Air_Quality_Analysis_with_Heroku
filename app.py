@@ -1,9 +1,19 @@
+import psycopg2
 from flask import Flask
 from flask import render_template_string
+from flask import render_template
+from flask import flask_menu
 from flask_menu import Menu, register_menu
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 Menu(app=app)
+
+
+# DATABASE_URL will contain the database connection string: HEROKU
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '')
+# Connects to the database using the app config
+db = SQLAlchemy(app)
 
 def tmpl_show_menu():
     return render_template_string(
