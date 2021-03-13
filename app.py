@@ -3,9 +3,7 @@ import psycopg2
 from flask import Flask
 from flask import render_template_string
 from flask import render_template
-# from flask import flask_menu
-# from flask_menu import Menu, register_menu
-# from flask_sqlalchemy import SQLAlchemy
+
 
 app = Flask(__name__)
 # Menu(app=app)
@@ -44,5 +42,5 @@ def home():
 # def second():
 #     return tmpl_show_menu()
 
-# if __name__ == '__main__':
-#     app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
