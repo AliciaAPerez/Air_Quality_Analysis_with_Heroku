@@ -11,9 +11,9 @@
 		<!-- <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"> -->
-		<link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('templates', filename='apple-touch-icon.png') }}">
-		<link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('templates', filename='favicon-32x32.png') }}">
-		<link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('templates', filename='favicon-16x16.png') }}">
+		<link rel="apple-touch-icon" sizes="180x180" href="{{ url_for(filename='apple-touch-icon.png') }}">
+		<link rel="icon" type="image/png" sizes="32x32" href="{{ url_for(filename='favicon-32x32.png') }}">
+		<link rel="icon" type="image/png" sizes="16x16" href="{{ url_for(filename='favicon-16x16.png') }}">
 		<link rel="manifest" href="site.webmanifest">
 	</head>
 	<body>
@@ -74,7 +74,7 @@
                             <p>For more information, please visit the Environmental Protection Agency website.</p>
                             <p>What is the Air Quality Index (AQI)?</p>
                             <p>An index developed by the EPA for reporting air quality levels. The AQI is used for the six air pollutants mentioned above.</p>
-                            <img src="../images/AirQualityIndex.png" alt="Air Quality Index Chart">
+                            <img src="{{ url_for('static', filename='/images/AirQualityIndex.png') }}" alt="Air Quality Index Chart">
                             <p>What is being displayed?</p>
                             <p>On the Home Screen, is a map of California and its counties. The markers are displaying the current and most abundant air pollutant at that reporting station. The markers are different colors to indicate the Index Value. More information is available by clicking on the marker.</p>
                             <p>The user will also be able to animate historical AQI Data by clicking the play button at the bottom of the screen.</p>
