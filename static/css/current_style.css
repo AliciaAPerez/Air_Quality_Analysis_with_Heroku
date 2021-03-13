@@ -1,9 +1,18 @@
- /* Container for image and header */
+/* Container for image and header */
 .container {
     position: relative;
     text-align: center;
     color: white;
     
+}
+
+/* Container for Header */
+.header {
+    position: relative;
+    text-align: left;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: darkblue;
+    font-family: Verdana;
 }
 
   /* text in container */
@@ -18,8 +27,6 @@
     font-family: Verdana;
 } 
 
-body {background-color:lightblue;}
-
 h1 {
     position: absolute;
     left: 1%;
@@ -30,13 +37,20 @@ h1 {
 
 /* remove default margin and padding from body */
 body {
+    background-color:lightblue;
     padding: 0;
     margin: 0;
 }
 
 /* set map, body, and html to 100% of the screen size */
-#map,
-body,
-html {
+#map {
+    width: 100px;
+    height:100px;
+    min-height: 100%;
+    min-width: 100%;
+    display: block;
+}
+
+#map-holder{
     height: 100%;
 }
