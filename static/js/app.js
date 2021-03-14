@@ -43,7 +43,7 @@ function markerColor(aqi) {
     }
 }
 // Read markers data from data.csv
-$.get('../Data/currentAQIData.csv', function(csvString) {
+$.get('../../Data/currentAQIData.csv', function(csvString) {
 
     // Using PapaParse to Parse CSV
     const data = Papa.parse(csvString, {header: true, dynamicTyping: true}).data; // Using Header: true to Key Data by Field Name
