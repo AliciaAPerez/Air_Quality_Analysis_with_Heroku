@@ -1,4 +1,5 @@
-*.csv
+aqi_full_data.csv
+aqs_sites.csv
 config.py
 config.js
 
