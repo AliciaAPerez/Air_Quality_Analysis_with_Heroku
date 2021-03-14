@@ -1,4 +1,3 @@
-consold.log("Hello")
 // Seting Up Initial Map Center and Zoom Level
 const map = L.map('map', {
     center: [36.7378, -119.7871],
