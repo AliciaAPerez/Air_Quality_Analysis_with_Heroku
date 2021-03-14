@@ -10,10 +10,10 @@ app = Flask(__name__)
 
 
 # # DATABASE_URL will contain the database connection string: HEROKU
-# app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '')
-# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # # Connects to the database using the app config
-# # db = SQLAlchemy(app)
+# db = SQLAlchemy(app)
 
 @app.route("/")
 def home():
