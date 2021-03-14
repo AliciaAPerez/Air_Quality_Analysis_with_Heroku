@@ -49,10 +49,65 @@
 			</div>
 			</div>
 		</nav>
-		<h1>Historical: Map</h1>
-			<div>
-
-            </div>
+		<div class= "title" >
+			<h1>Historical: Map</h1>
+		</div>
+		<div class="container">
+			<div class="row margin-top-50">
+				<div class="col-md-2">
+					<aside class="filters">
+						<div class="panel panel-default">
+							<div class="panel-heading">Data Search</div>
+						<div class="panel-body">
+							<form id="start-date-form">
+								<div class="form-group">
+									<ul class="list-group" id="filters">
+										<li class="filter list-group-item">
+											<label for="date">Date</label>
+											<input class="form-control" id="datetime" type="text" placeholder="1/01/2010">
+										</li>
+									</ul>
+								</div>
+							</form>
+							<form id="city-form">
+						<div class="form-group">
+							<ul class="list-group" id="filters">
+								<li class="filter list-group-item">
+									<label for="state">City</label>
+									<input class="form-control" id="state" type="text" placeholder="city">
+								</li>
+							</ul>
+						</div>
+						</form>
+						<form id="county-form">
+							<div class="form-group">
+								<ul class="list-group" id="filters">
+									<li class="filter list-group-item">
+									<label for="country">County</label>
+									<input class="form-control" id="country" type="text" placeholder="county">
+									</li>
+								</ul>
+							</div>
+						</form>
+						<form id="parameter-form">
+							<div class="form-group">
+								<ul class="list-group" id="filters">
+									<li class="filter list-group-item">
+										<label for="shape">Select a Parameter</label>
+										<input class="form-control" id="shape" type="text" placeholder="Parameter">
+									</li>
+								</ul>
+							</div>
+						<button id="filter-btn" type="button" class="btn btn-default">View Selected</button>
+						</form>
+					</div>
+					</div>
+				</aside>
+				</div>
+				
+			</div>
+		</div>
+	</div>
 
 
 <!--script for the drop down menu to work -->
