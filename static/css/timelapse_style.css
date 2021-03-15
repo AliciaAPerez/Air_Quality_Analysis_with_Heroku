@@ -26,11 +26,13 @@
   width: 100%;  /* This means "100% of the width of its container", the .col-md-8 */
 }
 
-body {background-color:lightblue;}
+body {
+  background-color:lightblue;
+  background-image: url("../images/pexels-pixabay-268415.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;}
 
 h1 {
-  position: absolute;
-  left: 1%;
   font-size: 350%;
   font-family: fantasy;
   color: darkblue;
