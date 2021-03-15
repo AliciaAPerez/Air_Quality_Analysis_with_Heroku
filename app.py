@@ -1,8 +1,9 @@
 import os
-import psycopg2
+# import psycopg2
 from flask import Flask
 from flask import render_template_string
 from flask import render_template
+from currentAQIData import *
 
 
 app = Flask(__name__)
@@ -25,7 +26,8 @@ def countryvpop():
 
 @app.route("/current")
 def current():
-    return render_template("current.html")
+    currentAQIData = get_csv()
+    return render_template("current.html", currentAQIData=currentAQIData)
 
 @app.route("/historical_form")
 def historical_form():
@@ -55,6 +57,9 @@ def timelapse():
 def yearlyvpop():
     return render_template("yearlyvpop.html")
 
+@app.route("/currentAQIData")
+def csv():
+    return get_csv()
 
 
 
