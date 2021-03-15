@@ -5,3 +5,6 @@ let select = d3.select("select");
 data.forEach(({county}) =>{
     let option = select.append(`option value= ${value}`).text(county);
 });
+
+option = select.append(`option value= ${value}`).text(county);
+select.append(`option value= ${value}`).text(county);
