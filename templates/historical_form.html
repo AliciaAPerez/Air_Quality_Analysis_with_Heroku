@@ -49,11 +49,15 @@
 			</div>
 			</div>
 		</nav>
-		<div class= "title" >
-			<h1>Historical: Form</h1>
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6">
+					<h1>Historical: Form</h1>
+				</div>
+			</div>
 		</div>
 		<div class="container">
-			<div class="row margin-top-50">
+			<div class="row">
 				<div class="col-md-2">
 					<aside class="filters">
 						<div class="panel panel-default">
@@ -63,8 +67,8 @@
 								<div class="form-group">
 									<ul class="list-group" id="filters">
 										<li class="filter list-group-item">
-											<label for="date">Start Data</label>
-											<input class="form-control" id="datetime" type="text" placeholder="1/01/2010">
+											<label for="start-date">Start Data</label>
+											<input class="form-control" id="start-date" type="text" placeholder="1/01/2010">
 										</li>
 									</ul>
 								</div>
@@ -73,8 +77,8 @@
 								<div class="form-group">
 									<ul class="list-group" id="filters">
 										<li class="filter list-group-item">
-											<label for="city">End Data</label>
-											<input class="form-control" id="city" type="text" placeholder="10/30/2020">
+											<label for="end-date">End Data</label>
+											<input class="form-control" id="end-date" type="text" placeholder="10/30/2020">
 										</li>
 									</ul>
 								</div>
@@ -83,8 +87,8 @@
 						<div class="form-group">
 							<ul class="list-group" id="filters">
 								<li class="filter list-group-item">
-									<label for="state">City</label>
-									<input class="form-control" id="state" type="text" placeholder="city">
+									<label for="city">City</label>
+									<input class="form-control" id="city" type="text" placeholder="city">
 								</li>
 							</ul>
 						</div>
@@ -93,22 +97,22 @@
 							<div class="form-group">
 								<ul class="list-group" id="filters">
 									<li class="filter list-group-item">
-									<label for="country">County</label>
-									<input class="form-control" id="country" type="text" placeholder="county">
+									<label for="county">County</label>
+									<input class="form-control" id="county" type="text" placeholder="county">
 									</li>
 								</ul>
 							</div>
 						</form>
-						<form id="parameter-form">
+						<form id="pollutant-form">
 							<div class="form-group">
 								<ul class="list-group" id="filters">
 									<li class="filter list-group-item">
-										<label for="shape">Select a Parameter</label>
-										<input class="form-control" id="shape" type="text" placeholder="Parameter">
+										<label for="pollutant">Pollutant</label>
+										<input class="form-control" id="pollutant" type="text" placeholder="pollutant">
 									</li>
 								</ul>
 							</div>
-						<button id="filter-btn" type="button" class="btn btn-default">View Selected</button>
+						<button id="filter-btn" type="button" class="btn-default">View Selected</button>
 						</form>
 					</div>
 					</div>
@@ -116,14 +120,14 @@
 				</div>
 				<div class="col-md-10">
 				<div id="table-area" class="">
-					<table id="historical-table" class="table table-striped">
+					<table id="pollutant-table" class="table table-striped">
 						<thead>
 							<tr>
 								<th class="table-head">Start Date</th>
 								<th class="table-head">End Date</th>
 								<th class="table-head">City</th>
 								<th class="table-head">County</th>
-								<th class="table-head">Parameter</th>
+								<th class="table-head">Pollutant</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -142,7 +146,8 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 		<script src="https://d3js.org/d3.v5.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
-		<script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/hist_form.js') }}"></script>
     </body>
 </html>

@@ -20,9 +20,9 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 def home():
     return render_template("index.html")
 
-@app.route("/countryvpop")
+@app.route("/countyvpop")
 def countryvpop():
-    return render_template("countryvpop.html")
+    return render_template("countyvpop.html")
 
 @app.route("/current")
 def current():

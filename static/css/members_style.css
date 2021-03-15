@@ -34,3 +34,7 @@ h1 {
   left: 5%;
   top: 50%;
 }
+.col-md-4{
+  /* background-color: lightblue; */
+  text-align: center;
+}

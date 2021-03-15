@@ -28,3 +28,8 @@ h1 {
     font-family: fantasy;
     color: darkblue;
 }
+
+.col-md-10{
+    /* background-color: lightblue; */
+    text-align: center;
+}

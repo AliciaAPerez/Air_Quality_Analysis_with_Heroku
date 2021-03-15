@@ -49,22 +49,26 @@
 			</div>
 			</div>
 		</nav>
-		<div class= "title" >
-			<h1>Historical: Map</h1>
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6">
+					<h1>Historical: Map</h1>
+				</div>
+			</div>
 		</div>
 		<div class="container">
-			<div class="row margin-top-50">
+			<div class="row">
 				<div class="col-md-2">
 					<aside class="filters">
 						<div class="panel panel-default">
 							<div class="panel-heading">Data Search</div>
 						<div class="panel-body">
-							<form id="start-date-form">
+							<form id="date-form">
 								<div class="form-group">
 									<ul class="list-group" id="filters">
 										<li class="filter list-group-item">
 											<label for="date">Date</label>
-											<input class="form-control" id="datetime" type="text" placeholder="1/01/2010">
+											<input class="form-control" id="date" type="text" placeholder="1/01/2010">
 										</li>
 									</ul>
 								</div>
@@ -73,8 +77,8 @@
 						<div class="form-group">
 							<ul class="list-group" id="filters">
 								<li class="filter list-group-item">
-									<label for="state">City</label>
-									<input class="form-control" id="state" type="text" placeholder="city">
+									<label for="city">City</label>
+									<input class="form-control" id="city" type="text" placeholder="city">
 								</li>
 							</ul>
 						</div>
@@ -83,18 +87,18 @@
 							<div class="form-group">
 								<ul class="list-group" id="filters">
 									<li class="filter list-group-item">
-									<label for="country">County</label>
-									<input class="form-control" id="country" type="text" placeholder="county">
+									<label for="county">County</label>
+									<input class="form-control" id="county" type="text" placeholder="county">
 									</li>
 								</ul>
 							</div>
 						</form>
-						<form id="parameter-form">
+						<form id="pollutant-form">
 							<div class="form-group">
 								<ul class="list-group" id="filters">
 									<li class="filter list-group-item">
-										<label for="shape">Select a Parameter</label>
-										<input class="form-control" id="shape" type="text" placeholder="Parameter">
+										<label for="pollutant">Pollutant</label>
+										<input class="form-control" id="pollutant" type="text" placeholder="pollutant">
 									</li>
 								</ul>
 							</div>
@@ -107,7 +111,9 @@
 				
 			</div>
 		</div>
-	</div>
+		<!-- want a map for this? or a chart? -->
+		<div id="map"></div>
+
 
 
 <!--script for the drop down menu to work -->
@@ -117,6 +123,6 @@
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 		<script src="https://d3js.org/d3.v5.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
-		<script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/hit_map.js') }}"></script>
     </body>
 </html>
