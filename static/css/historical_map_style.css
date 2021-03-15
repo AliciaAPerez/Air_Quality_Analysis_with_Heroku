@@ -29,3 +29,32 @@ h1 {
   font-family: fantasy;
   color: darkblue;
 }
+
+.col-md-6{
+  /* background-color: lightblue; */
+  text-align: center;
+}
+
+/* remove default margin and padding from body */
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/* set map, body, and html to 100% of the screen size */
+#map,
+body,
+html {
+  height: 100%;
+}
+
+
+.panel-heading{
+  background-color:white;
+  text-align: center;
+}
+.btn-default{
+  background-color:white;
+  text-align: center;
+}
+

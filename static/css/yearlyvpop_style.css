@@ -29,3 +29,14 @@ h1 {
     font-family: fantasy;
     color: darkblue;
 }
+
+.col-md-8{
+    /* background-color: lightblue; */
+    text-align: center;
+}
+
+.col-md-4{
+    /* background-color: lightblue; */
+    text-align: center;
+}
+

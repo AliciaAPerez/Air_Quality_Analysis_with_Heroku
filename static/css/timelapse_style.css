@@ -37,3 +37,12 @@ h1 {
   font-family: fantasy;
   color: darkblue;
 }
+
+.col-md-5{
+  /* background-color: lightblue; */
+  text-align: center;
+}
+.col-md-6{
+  background-color: lightblue;
+  text-align: center;
+}
