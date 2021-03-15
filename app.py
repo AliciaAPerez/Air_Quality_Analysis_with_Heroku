@@ -5,6 +5,7 @@ from flask import render_template_string
 from flask import render_template
 from currentAQIData import *
 
+from timelapse import *
 
 app = Flask(__name__)
 # # Menu(app=app)
@@ -51,7 +52,13 @@ def sources():
 
 @app.route("/timelapse")
 def timelapse():
-    return render_template("timelapse.html")
+    details = get_timelapse()
+    return render_template(
+        'timelapse.html',
+        map_id = details[0],
+        hdr_txt=details[1],
+        script_txt = details[2]
+    )
 
 @app.route("/yearlyvpop")
 def yearlyvpop():
@@ -61,7 +68,9 @@ def yearlyvpop():
 def csv():
     return get_csv()
 
-
+@app.route("/timelapseData")
+def timelapseData():
+    return get_timelapse()
 
 # @app.after_request
 # def add_header(r):
