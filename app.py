@@ -1,10 +1,16 @@
 import os
-# import psycopg2
-from flask import Flask
-from flask import render_template_string
-from flask import render_template
-from currentAQIData import *
+import psycopg2
 
+from flask import (
+    Flask,
+    render_template_string,
+    render_template,
+    jsonify,
+    request,
+    redirect)
+
+from models import create_classes
+from currentAQIData import get_csv
 from timelapse import *
 
 app = Flask(__name__)
@@ -12,10 +18,13 @@ app = Flask(__name__)
 
 
 # # DATABASE_URL will contain the database connection string: HEROKU
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '')
+from flask_sqlalchemy import SQLAlchemy
+app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///AirQuality.db"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # # Connects to the database using the app config
-# db = SQLAlchemy(app)
+db = SQLAlchemy(app)
+
+Sites = create_classes(db)
 
 @app.route("/")
 def home():
@@ -71,6 +80,22 @@ def csv():
 @app.route("/timelapseData")
 def timelapseData():
     return get_timelapse()
+
+@app.route("/db_test")
+def db_test():
+    results = db.session.query(Sites).all()
+    print(results)
+    # aq_data = [{
+    #     "site_no": site_no,
+    #     "CBSA_Name": CBSA_Name,
+    #     "Latitude": Latitude,
+    #     "Longitude": Longitude,
+    # }]
+    # print(aq_data)
+    return jsonify(results)
+
+if __name__ == '__main__':
+    app.run(debug=True)
 
 # @app.after_request
 # def add_header(r):
