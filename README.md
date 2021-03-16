@@ -76,9 +76,9 @@ https://aperez-air-quality-analysis.herokuapp.com
 >- Interactive map of air quality over time D3 folium JS library ? https://python-visualization.github.io/folium/
 
 ## **Overview:**
-Database Map
+Database Map  
 ![image](static/Images/Database_Model.png)  
 
-Project ERD
+Project ERD  
 ![image](static/Images/Project_ERD.png)  
 
