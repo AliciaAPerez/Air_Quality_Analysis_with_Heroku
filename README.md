@@ -11,13 +11,13 @@ This is a Full-Stack project that will require back-end and front-end developers
 This README will be broken down by product with a full description of the Back-End and Front-End Process. The products developed for this project are listed below. Feel free to click on the hyperlink to jump to that section:
  * [Current Conditions](#Current-Conditions)
  * [Time Lapse](#Time-Lapse)
- * [Yearly Air Quality](#Yearly-Air-Quality-vs.-Population)
+ * [Yearly Air Quality](#Yearly-Air-Quality)
 
 ### Additional Information
 >- For more information on how to setup and launch the project on [Heroku](https://www.heroku.com/), click [here](#Setup).
 >- To get to know the developers of this website, click [here](#Developers).
 >- To get a brief overview of the Technologies, click [here](#Technologies).
->- Look for data sources? [here](#Data-Sources).
+>- Looking for data sources? [here](#Data-Sources).
 
 
 ## **Current Conditions**
