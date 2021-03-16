@@ -1,5 +1,5 @@
 
-d3.json("details").then(function(Sites) {
+d3.json("AQ_cenus_query").then(function(Sites) {
   console.log(Sites)
 });
 

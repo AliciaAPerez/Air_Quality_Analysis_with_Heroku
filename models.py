@@ -76,7 +76,7 @@ def create_classes_aq(db):
         __tablename__ = 'AirQuality'
         aq_unique_no = db.Column(db.Integer, primary_key=True)
         county_code = db.Column(db.String(50))
-        Date = db.Column(db.Date)
+        Date = db.Column(db.String(20))
         Defining_Parameter = db.Column(db.String(20))
         Category = db.Column(db.String(50))
         State_Name = db.Column(db.String(20))
