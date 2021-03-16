@@ -1,16 +1,44 @@
 //import data
+d3.json("getPlotCSV").then(function(sqlaqiData) {
+    console.log(sqlaqiData)
+});
 
 //selecting the section for the table
-let tbody = d3.select("tbody");
-let table = d3.select("#pollutant-table")
+// let tbody = d3.select("tbody");
+// let table = d3.select("#pollutant-table")
+
+
+
+// d3.json("AQ_cenus_query").then(function(data) {
+//     console.log(data)
+    
+//     tableData.forEach((record) => {
+//         var row = tbody.append("tr");
+//         Object.entries(record).forEach(([key, value]) => {
+//             var cell = row.append("td");
+//             cell.text(value);
+//         });
+//     });
+// });
+        
+        // county_code
+        // Date
+        // Category
+        // Defining_Parameter
+        // AQI
+    
 
 //insert data into HTML for view upon opening page
-tableData.forEach(({start_date, end_date, city, county, pollutant, amount}) =>{
+aqiData.forEach(({site_no, end_date, city, county, pollutant, amount}) =>{
     let row = tbody.append("tr");
     row.append("td").text(start_date);
     row.append("td").text(end_date);
     row.append("td").text(city);
     row.append("td").text(county);
+    row.append("td").text(Land_Use);
+    row.append("td").text(Location_Setting);
+    row.append("td").text(site_no);
+    row.append("td").text(Elevation);
     row.append("td").text(pollutant);
     row.append("td").text(amount);
 });

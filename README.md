@@ -7,6 +7,7 @@ Hello and Welcome! You have stumbled upon the README for the California Air Qual
 
 This is a Full-Stack project that will require back-end and front-end developers. Above is a Database Model that illustrates the work flow.
 
+<<<<<<< HEAD
 ## Table of Contents
 This README will be broken down by product with a full description of the Back-End and Front-End Process. The products developed for this project are listed below. Feel free to click on the hyperlink to jump to that section:
 >- [Current Conditions](#Current Conditions)
@@ -15,6 +16,23 @@ This README will be broken down by product with a full description of the Back-E
 >- [Time Lapse](#Time Lapse)
 >- [County Air Quality vs. Population](#County Air Quality vs. Population)
 >- [Yearly Air Quality vs. Population](#Yearly Air Quality vs. Population)
+=======
+This README will be broken down by product with a full description of the Back-End and Front-End Process. The products developed for this project are listed below. Feel free to click on the hyperlink to jump to that section:  
+
+* [Current Conditions](#Current-Conditions)  
+* [Historical Form](#Historical-Form)  
+* [Historical: Map](#Historical-Map)  
+* [Time Lapse](#Time-Lapse)  
+* [County Air Quality vs. Population](#Country-Air)
+* [Yearly Air Quality vs. Population](#Yearly-Air)
+* [Team Members](#Team-members) 
+* [General Info](#General-info) 
+* [Technologies](#technologies)  
+* [Setup](#setup)  
+* [Data Sources](#data-sources)
+* [Visuals](#visuals) 
+* [Overview](#overview) 
+>>>>>>> 657b2c11baca0240335aee5c6d63505e99e5b4bc
 
 ### Additional Information
 For more information on how to setup and launch the project on [Heroku](https://www.heroku.com/), click [here](#Setup).
@@ -26,7 +44,7 @@ Look for data sources? [Sources](#Data Sources).
 
 
 
-## **Current Conditions**
+## Current Conditions
 The Current Conditions Product is an interactive map of California that displays the most recent and highest concentrated air quality for that city. The user can click on each marker for more information.
 
 ### Back-End Process
@@ -42,11 +60,19 @@ The last step will be to wrap the currentAQIData.csv and current.html into a web
 ## **Historical Form**
 This project scrapes the current pollutants from the airnow website for California and displays the historical data of the state from 1/1/2010 to 10/31/2020.
 
+<<<<<<< HEAD
 ### Back-End Process
 XXX 
 
 ### Front-End Process
 XXX
+=======
+## Historical Form 
+## Historical: Map
+## Time Lapse
+## County Air Quality vs. Population
+## Yearly Air Quality vs. Population
+>>>>>>> 657b2c11baca0240335aee5c6d63505e99e5b4bc
 
 ## **Historical: Map**
 XXX
@@ -110,7 +136,18 @@ Project is created with:
 * SQLAlchemy 1.3.23
 * pgAdmin 4
 
+<<<<<<< HEAD
 ## **Data Sources**
+=======
+## **Setup:**
+To launch the project, please use the following link:  
+https://aperez-air-quality-analysis.herokuapp.com
+
+Alternatively, you can launch the project by running: python app.py in the Git Bash window. 
+You will need an API key for MapBox to get the current conditions map to run properly. 
+
+## **Data sets:**
+>>>>>>> 657b2c11baca0240335aee5c6d63505e99e5b4bc
 >- Air Quality current: https://docs.airnowapi.org/HistoricalObservationsByLatLon/docs
 >>- scrape current data for visualization of current air quality
 >- Air Quality historical data: https://aqs.epa.gov/aqsweb/airdata/download_files.html

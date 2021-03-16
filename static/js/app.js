@@ -1,4 +1,3 @@
-// const API_KEY = process.env.API_KEY;
 function buildPlot() {
 
     // This will be the Default Map
@@ -106,7 +105,7 @@ function buildPlot() {
                 }).bindPopup("<h3>" + "Pollutant Type: " + aqiData.CurrentPollutant + "</h3>" +
                     "<h3>" + "Pollutant Index: " + CurrentAQIValue + "</h3>" + 
                     "<h4>" + aqiData.Time + " " + aqiData.Date + "</h4>");
-                console.log(marker);
+                // console.log(marker);
                 marker.addTo(map);
             }
         }

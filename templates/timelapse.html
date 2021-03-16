@@ -12,7 +12,7 @@
 		<link rel="manifest" href="{{url_for('static', filename='favicon/site.webmanifest') }}">
 		<!-- Leaflet CSS -->
 		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
-		<link href="https://cdn.jsdelivr.net/npm/leaflet-timedimension@1.1.1/dist/leaflet.timedimension.control.css"
+		<link href="https://cdn.jsdelivr.net/npm/leaflet-timedimension@1.1.1/dist/leaflet.timedimension.control.css">
 		{{ hdr_txt }}
 	</head>
 	<body>
@@ -60,7 +60,8 @@
 				</div>
 			</div>
 		</div>
-		{{ map_id }}
+		<!--<div>{{ map_id }}</div> -->
+		{% include 'timelapse_static.html' %}
 
 <!--script for the drop down menu to work -->
 		<!-- Leaflet JS -->
@@ -79,5 +80,5 @@
 
     </body>
 	
-	{{ script_txt }}
+	<script>{{ script_txt }}</script>
 </html>

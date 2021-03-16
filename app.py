@@ -7,18 +7,23 @@ from flask import (
     render_template,
     jsonify,
     request,
-    redirect)
+    redirect,
+    send_file)
 
 from models import *
 from currentAQIData import get_csv
 from folium.plugins import HeatMapWithTime
+from AQ_census_query import *
 from timelapse import *
-
+from countyvpopData import*
 
 app = Flask(__name__)
 # # Menu(app=app)
 
-API_KEY = os.environ.get('API_KEY', '')
+# # key for maps on Heroku = not working
+# from boto.s3.connection import S3Connection
+# API_KEY = S3Connection(os.environ['MAP_KEY'])
+
 # # DATABASE_URL will contain the database connection string: HEROKU
 from flask_sqlalchemy import SQLAlchemy
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///AirQuality.db"
@@ -30,6 +35,9 @@ Sites = create_classes_site(db)
 County = create_classes_county(db)
 CensusPopulation = create_classes_pop(db)
 year = create_classes_year(db)
+DateYear = create_classes_dateyear(db)
+Defining_Parameter = create_classes_def_param(db)
+AirQuality = create_classes_aq(db)
 
 
 @app.route("/")
@@ -38,7 +46,8 @@ def home():
 
 @app.route("/countyvpop")
 def countryvpop():
-    return render_template("countyvpop.html")
+    countyvpopData = pull_cvp_csv()
+    return render_template("countyvpop.html", countyvpopData=countyvpopData)
 
 @app.route("/current")
 def current():
@@ -67,19 +76,17 @@ def sources():
 
 @app.route("/timelapse")
 def timelapse():
-    details = get_timelapse()
-    return details[0]
-    # return render_template(
-    #     'timelapse.html',
-    #     map_id = details[0],
-    #     hdr_txt=details[1],
-    #     script_txt = details[2]
+    get_timelapse()
+    return render_template(
+        'timelapse.html'
+        # map_id = details[0],
+        # hdr_txt=details[1],
+        # script_txt = details[2]
     )
 
 @app.route("/yearlyvpop")
 def yearlyvpop():
-    AQ_census_query = get_SQL_AQ_census_query()
-    return render_template("yearlyvpop.html",AQ_census_query=AQ_census_query)
+    return render_template("yearlyvpop.html")
 
 @app.route("/currentAQIData")
 def csv():
@@ -87,11 +94,26 @@ def csv():
 
 @app.route("/timelapseData")
 def timelapseData():
-    return get_timelapse()
+    get_timelapse()
 
 @app.route("/AQ_cenus_query")
 def return_SQL_AQ_census_query():
     return get_SQL_AQ_census_query()
+
+@app.route('/getPlotCSV') # this is a job for GET, not POST
+def pull_csv():
+    return send_file('static/data/all_data.csv',
+        mimetype='text/csv',
+        attachment_filename='Adjacency.csv',
+        as_attachment=True)
+
+@app.route('/getcountyvpopCSV') # this is a job for GET, not POST
+def pull_cvp_csv():
+    return pull_cvp_csv()
+    # return send_file('static/data/countyvpop.csv',
+    #     mimetype='text/csv',
+    #     attachment_filename='Adjacency.csv',
+    #     as_attachment=True)
 
 if __name__ == '__main__':
     app.run(debug=True)
