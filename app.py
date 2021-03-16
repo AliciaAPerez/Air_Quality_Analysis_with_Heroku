@@ -18,7 +18,12 @@ from timelapse import *
 app = Flask(__name__)
 # # Menu(app=app)
 
-API_KEY = os.environ.get('API_KEY', '')
+# # API KEY on HEROKU
+from boto.s3.connection import S3Connection
+s3 = S3Connection(os.environ['API_KEY'], os.environ['API_KEY_SECRET'])
+API_KEY = app.config['API_KEY']
+
+
 # # DATABASE_URL will contain the database connection string: HEROKU
 from flask_sqlalchemy import SQLAlchemy
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///AirQuality.db"

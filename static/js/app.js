@@ -1,4 +1,3 @@
-// const API_KEY = process.env.API_KEY;
 function buildPlot() {
 
     // This will be the Default Map
