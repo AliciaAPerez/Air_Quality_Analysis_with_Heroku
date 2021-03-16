@@ -34,7 +34,7 @@ CensusPopulation = create_classes_pop(db)
 year = create_classes_year(db)
 DateYear = create_classes_dateyear(db)
 Defining_Parameter = create_classes_def_param(db)
-AirQuality = create_classes_year(db)
+AirQuality = create_classes_aq(db)
 
 
 @app.route("/")

@@ -7,6 +7,10 @@ def create_classes_site(db):
         CBSA_Name = db.Column(db.String(100))
         Latitude = db.Column(db.Float)
         Longitude = db.Column(db.Float)
+        Elevation = db.Column(db.String(50))
+        Land_Use = db.Column(db.String(50))
+        Location_Setting = db.Column(db.String(50))
+        City_Name = db.Column(db.String(50))
 
         def __repr__(self):
             return '<Sites %r>' % (self.CBSA_Name)
@@ -29,7 +33,7 @@ def create_classes_pop(db):
         __table_args__ = {'extend_existing': True}
         census_unique_no = db.Column(db.Integer, primary_key=True)
         county_code = db.Column(db.String(20))
-        year = db.Column(db.Integer)
+        year = db.Column(db.String(20))
         population = db.Column(db.Integer)
         print(population)
         def __repr__(self):
@@ -40,7 +44,7 @@ def create_classes_year(db):
     class year(db.Model):
         __tablename__ = 'year'
         __table_args__ = {'extend_existing': True}
-        year = db.Column(db.Integer, primary_key=True)
+        year = db.Column(db.String(20), primary_key=True)
 
         def __repr__(self):
             return '<year %r>' % (self.year)
@@ -51,7 +55,7 @@ def create_classes_dateyear(db):
         __tablename__ = 'DateYear'
         __table_args__ = {'extend_existing': True}
         Date = db.Column(db.Date, primary_key=True)
-        year = db.Column(db.Integer)
+        year = db.Column(db.String(20))
 
         def __repr__(self):
             return '<DateYear %r>' % (self.Date)
