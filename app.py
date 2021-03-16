@@ -11,7 +11,9 @@ from flask import (
 
 from models import *
 from currentAQIData import get_csv
+from folium.plugins import HeatMapWithTime
 from timelapse import *
+
 
 app = Flask(__name__)
 # # Menu(app=app)
@@ -66,11 +68,12 @@ def sources():
 @app.route("/timelapse")
 def timelapse():
     details = get_timelapse()
-    return render_template(
-        'timelapse.html',
-        map_id = details[0],
-        hdr_txt=details[1],
-        script_txt = details[2]
+    return details[0]
+    # return render_template(
+    #     'timelapse.html',
+    #     map_id = details[0],
+    #     hdr_txt=details[1],
+    #     script_txt = details[2]
     )
 
 @app.route("/yearlyvpop")
