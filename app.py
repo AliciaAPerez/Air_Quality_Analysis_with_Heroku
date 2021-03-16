@@ -19,7 +19,7 @@ app = Flask(__name__)
 # # Menu(app=app)
 
 from boto.s3.connection import S3Connection
-API_KEY = S3Connection(os.environ['S3_KEY'])
+API_KEY = S3Connection(os.environ['MAP_KEY'])
 
 # # DATABASE_URL will contain the database connection string: HEROKU
 from flask_sqlalchemy import SQLAlchemy
