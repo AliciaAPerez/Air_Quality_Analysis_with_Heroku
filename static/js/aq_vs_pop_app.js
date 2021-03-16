@@ -71,7 +71,7 @@ function renderLabels(countyLabel, newXScale, chosenXAxis) {
 }
 
 // Retrieve data from the CSV file and execute everything below
-d3.json("getcountyvpopCSV").then(function(error, aqiData) {
+d3.json({ countyvpopData }).then(function(error, aqiData) {
   if (error) throw error;
   
   console.log(aqiData)

@@ -47,6 +47,7 @@ def home():
 @app.route("/countyvpop")
 def countryvpop():
     countyvpopData = pull_cvp_csv()
+    print(countyvpopData)
     return render_template("countyvpop.html", countyvpopData=countyvpopData)
 
 @app.route("/current")
@@ -109,11 +110,9 @@ def pull_csv():
 
 @app.route('/getcountyvpopCSV') # this is a job for GET, not POST
 def pull_cvp_csv():
-    return pull_cvp_csv()
-    # return send_file('static/data/countyvpop.csv',
-    #     mimetype='text/csv',
-    #     attachment_filename='Adjacency.csv',
-    #     as_attachment=True)
+    data = pull_csv_cvp()
+    print(data[0])
+    return data
 
 if __name__ == '__main__':
     app.run(debug=True)

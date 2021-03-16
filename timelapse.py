@@ -53,6 +53,8 @@ def get_timelapse():
     start_coords = (36.7378, -119.7871)
     folium_map = folium.Map(location=start_coords, zoom_start=6, tiles='stamentoner', width='80%', height='80%')
 
+    title_html = "<h2>Monthly Average Ozone 2010 - 2020</h2>"
+
     #add the Heat Map from the data
     HeatMapWithTime(data=mapData_list, radius=20, auto_play=True, overlay=False, max_opacity=0.5,
                        gradient = {0.2: '#FBD973', 
@@ -60,6 +62,7 @@ def get_timelapse():
                             0.75: '#F16578', 
                             .9: '#782890'}).add_to(folium_map)
 
+    folium_map.get_root().html.add_child(folium.Element(title_html))
     # display base map with HeatMap 
     _ = folium_map._repr_html_()
     map_id = folium_map._repr_html_()
