@@ -1,5 +1,5 @@
 # California Air Quality Analysis
-TEST TEST TEST
+TEST TEST TEST 2
 ## Introduction
 Hello and Welcome! You have stumbled upon the README for the California Air Quality Analysis Website. This README was designed to help you reconstruct the air quality products that allow the public and corportations make decisions that may impact human health and operations.
 
@@ -9,24 +9,23 @@ This is a Full-Stack project that will require back-end and front-end developers
 
 ## Table of Contents
 This README will be broken down by product with a full description of the Back-End and Front-End Process. The products developed for this project are listed below. Feel free to click on the hyperlink to jump to that section:
->- [Current Conditions](#Current Conditions)
->- [Historical Form](#Historical Form)
->- [Historical: Map](#Historical: Map)
->- [Time Lapse](#Time Lapse)
->- [County Air Quality vs. Population](#County Air Quality vs. Population)
->- [Yearly Air Quality vs. Population](#Yearly Air Quality vs. Population)
+ * [Current Conditions](#Current-Conditions)
+ * [Historical Form](#Historical-Form)
+>- [Historical: Map](#Historical:-Map)
+>- [Time Lapse](#Time-Lapse)
+>- [County Air Quality vs. Population](#County-Air-Quality-vs.-Population)
+>- [Yearly Air Quality vs. Population](#Yearly-Air-Quality-vs.-Population)
 
 ### Additional Information
-For more information on how to setup and launch the project on [Heroku](https://www.heroku.com/), click [here](#Setup).
-
-To see a file hiearchy of the project, click [here](#Project Contents).
-To get to know the developers of this website, click [here](#Developers).
-To get a brief overview of the Technologies, click [here](#Technologies).
-Look for data sources? [Sources](#Data Sources).
-
+>- For more information on how to setup and launch the project on [Heroku](https://www.heroku.com/), click [here](#Setup).
+>- To see a file hiearchy of the project, click [here](#Project Contents).
+>- To get to know the developers of this website, click [here](#Developers).
+>- To get a brief overview of the Technologies, click [here](#Technologies).
+>- Look for data sources? [here](#Data-Sources).
 
 
-## Current Conditions
+
+## **Current Conditions**
 The Current Conditions Product is an interactive map of California that displays the most recent and highest concentrated air quality for that city. The user can click on each marker for more information.
 
 ### Back-End Process
