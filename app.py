@@ -13,7 +13,7 @@ from flask import (
 from models import *
 from currentAQIData import get_csv
 from folium.plugins import HeatMapWithTime
-from AQ_census_query import *
+#from AQ_census_query import *
 from timelapse import *
 from countyvpopData import*
 
