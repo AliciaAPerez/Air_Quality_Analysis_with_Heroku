@@ -19,8 +19,8 @@ app = Flask(__name__)
 # # Menu(app=app)
 
 # # key for maps on Heroku = not working
-# from boto.s3.connection import S3Connection
-# API_KEY = S3Connection(os.environ['MAP_KEY'])
+from boto.s3.connection import S3Connection
+API_KEY = S3Connection(os.environ['MAP_KEY'])
 
 # # DATABASE_URL will contain the database connection string: HEROKU
 from flask_sqlalchemy import SQLAlchemy
