@@ -8,12 +8,12 @@ from flask import (
     redirect)
 
 from flask import current_app
-import app
+from app import app
 from flask_sqlalchemy import SQLAlchemy
 from models import *
 
-
 db = SQLAlchemy(app)
+
 Sites = create_classes_site(db)
 County = create_classes_county(db)
 CensusPopulation = create_classes_pop(db)
@@ -22,21 +22,21 @@ DateYear = create_classes_dateyear(db)
 Defining_Parameter = create_classes_def_param(db)
 AirQuality = create_classes_year(db)
 
+# def get_SQL_Historical_AQI_query():
+#     results = db.session.query(Sites.City_Name, Sites.Location_Setting,\
+#         Sites.Land_Use, Sites.Elevation, County.county_name, ).all()
 
 def get_SQL_AQ_census_query():
-    results = db.session.query(Sites.CBSA_Name, Sites.Latitude,Sites.Longitude, County.county_name).all()
-    # print(results)
-    # site_no = [result[0] for result in results]
-    CBSA_Name = [result[0] for result in results]
-    lat = [result[1] for result in results]
-    lon = [result[2] for result in results]
+    sites_results = db.session.query(site_no, Sites.CBSA_Name,\
+        Sites.Latitude,Sites.Longitude, Sites.Elevation,\
+        Sites.Land_Use, Sites.Location_Setting, Sites.City_Name).all()
+    
+    aq_results = db.session.query(AirQuality.county_code, AirQuality.Date,\
+        AirQuality.Latitude,AirQuality.Longitude, AirQuality.Elevation,\
+        AirQuality.Category, AirQuality.AQI, AirQuality.site_no).all()
+    
 
-    AQ_cenus_query = [{
-        # "site_no": site_no,
-        "CBSA_Name": CBSA_Name,
-        "Latitude": lat,
-        "Longitude": lon,
-    }]
+    AQ_cenus_query = json.dumps([ row._asdict() for row in sites_results ])
     print(AQ_cenus_query)
     return AQ_cenus_query
 
