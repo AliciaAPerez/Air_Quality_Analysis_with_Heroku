@@ -21,7 +21,6 @@ app = Flask(__name__)
 from flask_sqlalchemy import SQLAlchemy
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///AirQuality.db"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-const API_KEY = process.env.API_KEY;
 # # Connects to the database using the app config
 db = SQLAlchemy(app)
 
