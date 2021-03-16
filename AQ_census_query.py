@@ -20,24 +20,25 @@ CensusPopulation = create_classes_pop(db)
 year = create_classes_year(db)
 DateYear = create_classes_dateyear(db)
 Defining_Parameter = create_classes_def_param(db)
-AirQuality = create_classes_year(db)
+AirQuality = create_classes_aq(db)
 
 # def get_SQL_Historical_AQI_query():
 #     results = db.session.query(Sites.City_Name, Sites.Location_Setting,\
 #         Sites.Land_Use, Sites.Elevation, County.county_name, ).all()
 
 def get_SQL_AQ_census_query():
-    sites_results = db.session.query(site_no, Sites.CBSA_Name,\
+    sites_results = db.session.query(Sites.site_no, Sites.CBSA_Name,\
         Sites.Latitude,Sites.Longitude, Sites.Elevation,\
         Sites.Land_Use, Sites.Location_Setting, Sites.City_Name).all()
     
     aq_results = db.session.query(AirQuality.county_code, AirQuality.Date,\
-        AirQuality.Latitude,AirQuality.Longitude, AirQuality.Elevation,\
-        AirQuality.Category, AirQuality.AQI, AirQuality.site_no).all()
+        AirQuality.Defining_Parameter, AirQuality.Category, AirQuality.AQI, \
+        AirQuality.site_no).all()
     
+    # aq_sites_merge_df = aq_results.merge(sites_results,on='site_no')
 
-    AQ_cenus_query = json.dumps([ row._asdict() for row in sites_results ])
-    print(AQ_cenus_query)
+    AQ_cenus_query = json.dumps([ row._asdict() for row in aq_results ])
+    # print(AQ_cenus_query)
     return AQ_cenus_query
 
 get_SQL_AQ_census_query()
