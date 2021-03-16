@@ -6,7 +6,7 @@ from folium.plugins import HeatMapWithTime
 from flask import Markup
 
 def get_timelapse():
-    file = "Data/all_data.csv"
+    file = "static/Data/all_data.csv"
     param = "Ozone"
     # get the data
     histData = pd.read_csv(file, parse_dates=['Date'])
