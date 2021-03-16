@@ -16,7 +16,7 @@ from timelapse import *
 app = Flask(__name__)
 # # Menu(app=app)
 
-
+API_KEY = os.environ.get('API_KEY', '')
 # # DATABASE_URL will contain the database connection string: HEROKU
 from flask_sqlalchemy import SQLAlchemy
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///AirQuality.db"
