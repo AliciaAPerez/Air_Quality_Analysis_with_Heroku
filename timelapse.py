@@ -59,7 +59,9 @@ def get_timelapse():
                             0.4: '#fa782f', 
                             0.75: '#F16578', 
                             .9: '#782890'}).add_to(folium_map)
-
+    
+    title_html = "<h2>Monthly Average Ozone 2010 - 2020</h2>"
+    folium_map.get_root().html.add_child(folium.Element(title_html))
     # display base map with HeatMap 
     _ = folium_map._repr_html_()
     map_id = folium_map._repr_html_()
