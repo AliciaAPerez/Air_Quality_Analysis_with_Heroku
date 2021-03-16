@@ -5,17 +5,25 @@ Hello and Welcome! You have stumbled upon the README for the California Air Qual
 
 This is a Full-Stack project that will require back-end and front-end developers. Above is a Database Model that illustrates the work flow.
 
-This README will be broken down by product with a full description of the Back-End and Front-End Process. The products developed for this project are listed below. Feel free to click on the hyperlink to jump to that section:
->- [Current Conditions](#Current Conditions)
->- [Historical Form](#Historical Form)
->- [Historical: Map](#Historical: Map)
->- [Time Lapse](#Time Lapse)
->- [County Air Quality vs. Population](#County Air Quality vs. Population)
->- [Yearly Air Quality vs. Population](#Yearly Air Quality vs. Population)
+This README will be broken down by product with a full description of the Back-End and Front-End Process. The products developed for this project are listed below. Feel free to click on the hyperlink to jump to that section:  
+
+* [Current Conditions](#Current-Conditions)  
+* [Historical Form](#Historical-Form)  
+* [Historical: Map](#Historical-Map)  
+* [Time Lapse](#Time-Lapse)  
+* [County Air Quality vs. Population](#Country-Air)
+* [Yearly Air Quality vs. Population](#Yearly-Air)
+* [Team Members](#Team-members) 
+* [General Info](#General-info) 
+* [Technologies](#technologies)  
+* [Setup](#setup)  
+* [Data Sources](#data-sources)
+* [Visuals](#visuals) 
+* [Overview](#overview) 
 
 To get to know the developers of this website click [here](#Developers).
 
-## **Current Conditions**
+## Current Conditions
 The Current Conditions Product is an interactive map of California that displays the most recent and highest concentrated air quality for that city. The user can click on each marker for more information.
 
 ### Back-End Process
@@ -27,8 +35,11 @@ The web scrape, [scrape_currentAQ.py](static/py/scrape_currentAQ.py), was writte
 The Front-End Process was programmed in JavaScript, [app.js](static/js/app.js), using the Leaflet Library and Mapbox to create the map, and [HTML](templates/current.html) for the webpage. The developer will need to obtain an API Key from [MapBox](https://docs.mapbox.com/api/overview/).
 
 
-
- 
+## Historical Form 
+## Historical: Map
+## Time Lapse
+## County Air Quality vs. Population
+## Yearly Air Quality vs. Population
 
 
 ## **Team members:**
@@ -58,6 +69,8 @@ Project is created with:
 To launch the project, please use the following link:  
 https://aperez-air-quality-analysis.herokuapp.com
 
+Alternatively, you can launch the project by running: python app.py in the Git Bash window. 
+You will need an API key for MapBox to get the current conditions map to run properly. 
 
 ## **Data sets:**
 >- Air Quality current: https://docs.airnowapi.org/HistoricalObservationsByLatLon/docs
