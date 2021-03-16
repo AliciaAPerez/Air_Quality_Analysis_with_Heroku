@@ -1,20 +1,35 @@
 # Air_Quality_Analysis
-Tell your story web visualization Project 2
+Hello and Welcome! You have stumbled upon the README for the California Air Quality Analysis Website. This README was designed to help you reconstruct the air quality products that allow the public and corportations make decisions that may impact human health and operations.
 
-## Table of Contents 
-* [Inspiration](#Inspiration)  
-* [Team Members](#Team-members) 
-* [General Info](#General-info) 
-* [Technologies](#technologies)  
-* [Setup](#setup)  
-* [Data Sources](#data-sources)
-* [Visuals](#visuals) 
-* [Overview](#overview)  
+![Database Model](static/images/Database_Model.png)
+
+This is a Full-Stack project that will require back-end and front-end developers. Above is a Database Model that illustrates the work flow.
+
+This README will be broken down by product with a full description of the Back-End and Front-End Process. The products developed for this project are listed below. Feel free to click on the hyperlink to jump to that section:
+>- [Current Conditions](#Current Conditions)
+>- [Historical Form](#Historical Form)
+>- [Historical: Map](#Historical: Map)
+>- [Time Lapse](#Time Lapse)
+>- [County Air Quality vs. Population](#County Air Quality vs. Population)
+>- [Yearly Air Quality vs. Population](#Yearly Air Quality vs. Population)
+
+To get to know the developers of this website click [here](#Developers).
+
+## **Current Conditions**
+The Current Conditions Product is an interactive map of California that displays the most recent and highest concentrated air quality for that city. The user can click on each marker for more information.
+
+### Back-End Process
+To acquire hourly air quality data, the developer will need to perform a web scrape from [AirNow.gov](https://www.airnow.gov/). A web scrape was used by the developer, but in order to prevent getting blocked by websites from too much scraping, a free API from AirNow.gov is highly recommended. The rate limit is 500 requests per hour, this should be more than enough for this project. In addition, the web scrape takes an estimated 15 minutes to complete. 
+
+The web scrape, [scrape_currentAQ.py](static/py/scrape_currentAQ.py), was written in Python using dependencies like Splinter and Beautiful Soup for the scrape, Pandas to clean the csv data, and time to keep the program running every hour. The scrape will require a list of cities to loop through in order to build the query. This list is pulled from a CSV file, [ca_sites.csv](static/Data/ca_sites.csv). This file was pulled from the [United State Census Bureau](https://www.census.gov/data/datasets/time-series/demo/popest/2010s-total-cities-and-towns.html#ds) and cleaned with Pandas. After the scrape, the data gets converted into a DataFrame and is merged with ca_sites.csv to create a new CSV, [currentAQIData.csv](static/Data/currentAQIData.csv). This CSV will be used for the Front-End Process. In the future, it is recommended the developer convert the DataFrame to a JSON, rather a CSV. This will help prevent additional coding and steps. 
+
+### Front-End Process
+The Front-End Process was programmed in JavaScript, [app.js](static/js/app.js), using the Leaflet Library and Mapbox to create the map, and [HTML](templates/current.html) for the webpage. The developer will need to obtain an API Key from [MapBox](https://docs.mapbox.com/api/overview/).
 
 
 
-## **Inspiration:**
->- Analyze Air Quality in California by county & compare to demographic information from the Census data. Information can be useful for businesses to make saftey decisions on outdoor working employee's health.
+ 
+
 
 ## **Team members:**
 >- **Julia Headlee**  [Git Hub: julieheadlee](https://github.com/julieheadlee)
