@@ -51,7 +51,7 @@ def get_timelapse():
 
     # create the base map
     start_coords = (36.7378, -119.7871)
-    folium_map = folium.Map(location=start_coords, zoom_start=6, tiles='stamentoner')
+    folium_map = folium.Map(location=start_coords, zoom_start=6, tiles='stamentoner', width='80%', height='80%')
 
     #add the Heat Map from the data
     HeatMapWithTime(data=mapData_list, radius=20, auto_play=True, overlay=False, max_opacity=0.5,
