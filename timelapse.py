@@ -52,8 +52,7 @@ def get_timelapse():
     folium_map = folium.Map(location=start_coords, zoom_start=6, tiles='Stamen Terrain')
 
     #add the Heat Map from the data
-    #HeatMap(data=mapData, radius=20).add_to(folium_map)
-    HeatMapWithTime(data=mapData_list, radius=20, auto_play=True, max_opacity=0.3,
+    HeatMapWithTime(data=mapData_list, radius=20, auto_play=True, overlay=False, max_opacity=0.3,
                        gradient = {0.2: '#FBD973', 
                             0.4: '#fa782f', 
                             0.75: '#F16578', 
