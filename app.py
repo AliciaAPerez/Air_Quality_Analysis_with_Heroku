@@ -79,7 +79,7 @@ def timelapse():
     #     map_id = details[0],
     #     hdr_txt=details[1],
     #     script_txt = details[2]
-    )
+    # )
 
 @app.route("/yearlyvpop")
 def yearlyvpop():
