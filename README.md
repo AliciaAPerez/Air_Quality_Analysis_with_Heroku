@@ -1,5 +1,5 @@
 # California Air Quality Analysis
-TEST TEST TEST 2
+
 ## Introduction
 Hello and Welcome! You have stumbled upon the README for the California Air Quality Analysis Website. This README was designed to help you reconstruct the air quality products that allow the public and corportations make decisions that may impact human health and operations.
 
@@ -10,19 +10,14 @@ This is a Full-Stack project that will require back-end and front-end developers
 ## Table of Contents
 This README will be broken down by product with a full description of the Back-End and Front-End Process. The products developed for this project are listed below. Feel free to click on the hyperlink to jump to that section:
  * [Current Conditions](#Current-Conditions)
- * [Historical Form](#Historical-Form)
->- [Historical: Map](#Historical:-Map)
->- [Time Lapse](#Time-Lapse)
->- [County Air Quality vs. Population](#County-Air-Quality-vs.-Population)
->- [Yearly Air Quality vs. Population](#Yearly-Air-Quality-vs.-Population)
+ * [Time Lapse](#Time-Lapse)
+ * [Yearly Air Quality](#Yearly-Air-Quality-vs.-Population)
 
 ### Additional Information
 >- For more information on how to setup and launch the project on [Heroku](https://www.heroku.com/), click [here](#Setup).
->- To see a file hiearchy of the project, click [here](#Project Contents).
 >- To get to know the developers of this website, click [here](#Developers).
 >- To get a brief overview of the Technologies, click [here](#Technologies).
 >- Look for data sources? [here](#Data-Sources).
-
 
 
 ## **Current Conditions**
@@ -38,43 +33,16 @@ The Front-End Process was programmed in JavaScript, [app.js](static/js/app.js), 
 
 The last step will be to wrap the currentAQIData.csv and current.html into a web application. This project used Flask Python, [app.py](app.py). 
 
-## **Historical Form**
-This project scrapes the current pollutants from the airnow website for California and displays the historical data of the state from 1/1/2010 to 10/31/2020.
-
-### Back-End Process
-XXX 
-
-### Front-End Process
-XXX
-
-## **Historical: Map**
-XXX
-
-### Back-End Process
-XXX 
-
-### Front-End Process
-XXX
-
 ## **Time Lapse**
-XXX
+The Time Lapse Product is a Heat Map of Ozone's AQI from January 1, 2010 to September 30, 2020.
 
 ### Back-End Process
-XXX 
+The data used for this product came from the United States Environmental Protection Agency, [EPA](https://aqs.epa.gov/aqsweb/airdata/download_files.html). This project used Annual AQI by County Data from 2010 to 2020. After aggregating and cleaning the data, it was able to be saved as [all_data.csv](static/Data/all_data.csv). 
 
 ### Front-End Process
-XXX
+A Python Library called Folium was used to power the Front-End of this product, [timelapse.py](timelapse.py). The last step will be to wrap the timelapse() function from timelapse.py and the timelapse.html into a web application. This project used Flask Python, [app.py](app.py).
 
-## **County Air Quality vs. Poplulation**
-XXX
-
-### Back-End Process
-XXX 
-
-### Front-End Process
-XXX
-
-## **Yearly Air Quality vs. Population**
+## **Yearly Air Quality**
 XXX
 
 ### Back-End Process
@@ -86,8 +54,6 @@ XXX
 ## **Setup**
 To launch the project, please use the following link:  
 https://aperez-air-quality-analysis.herokuapp.com
-
-## **Project Contents**
 
 ## **Developers**
 >- **Julia Headlee**  [Git Hub: julieheadlee](https://github.com/julieheadlee)
@@ -118,16 +84,6 @@ Project is created with:
     >>- by county: https://www.census.gov/data/datasets/time-series/demo/popest/2010s-counties-total.html   
     >>- by city: https://www.census.gov/data/datasets/time-series/demo/popest/2010s-total-cities-and-towns.html  
 >>- Use Python flask route to pass data from PostgressSQL database
-
-## **Visuals:**
->- Topical graph with heatmap of Air Quality
->- Add layer to map to include demographic data
->- make interactive graph by picking date / county
->- Interactive map of air quality over time D3 folium JS library ? https://python-visualization.github.io/folium/
-
-## **Overview:**
-Database Map  
-![image](static/Images/Database_Model.png)  
 
 Project ERD  
 ![image](static/Images/Project_ERD.png)  
