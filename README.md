@@ -43,13 +43,13 @@ The data used for this product came from the United States Environmental Protect
 A Python Library called Folium was used to power the Front-End of this product, [timelapse.py](timelapse.py). The last step will be to wrap the timelapse() function from timelapse.py and the timelapse.html into a web application. This project used Flask Python, [app.py](app.py).
 
 ## **Yearly Air Quality**
-XXX
+The Yearly Air Quality Product is a Data Table of Pollutants in California from January 1, 2010 to September 30, 2020. 
 
 ### Back-End Process
-XXX 
+The data used for this product came from the United States Environmental Protection Agency, [EPA](https://aqs.epa.gov/aqsweb/airdata/download_files.html). This project used Annual AQI by County Data from 2010 to 2020. After aggregating and cleaning the data, it was able to be saved as [all_data.csv](static/Data/all_data.csv). 
 
 ### Front-End Process
-XXX
+The Front-End Process was a datatable written in JavaScript, [yearlyvpop.js](static/js/yearlyvpop.js), and uses HTML, (templates/yearlyvpop.html) for the webpage. The last step will be to wrap the timelapse.html into a web application. This project used Flask Python, [app.py](app.py).
 
 ## **Setup**
 To launch the project, please use the following link:  
@@ -76,15 +76,8 @@ Project is created with:
 * pgAdmin 4
 
 ## **Data Sources**
->- Air Quality current: https://docs.airnowapi.org/HistoricalObservationsByLatLon/docs
->>- scrape current data for visualization of current air quality
->- Air Quality historical data: https://aqs.epa.gov/aqsweb/airdata/download_files.html
->>- csv to database (cleanse using pandas); Use Python flask route to pass data from PostgressSQL database
->- US Census:  
-    >>- by county: https://www.census.gov/data/datasets/time-series/demo/popest/2010s-counties-total.html   
-    >>- by city: https://www.census.gov/data/datasets/time-series/demo/popest/2010s-total-cities-and-towns.html  
->>- Use Python flask route to pass data from PostgressSQL database
+>- https://docs.airnowapi.org/HistoricalObservationsByLatLon/docs
+>- https://aqs.epa.gov/aqsweb/airdata/download_files.html
+>- https://www.census.gov/data/datasets/time-series/demo/popest/2010s-counties-total.html    
 
-Project ERD  
-![image](static/Images/Project_ERD.png)  
 
