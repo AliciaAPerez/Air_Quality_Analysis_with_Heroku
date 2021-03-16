@@ -45,7 +45,7 @@ def home():
 @app.route("/countyvpop")
 def countryvpop():
     AQ_census_query = get_SQL_AQ_census_query()
-    return render_template("countyvpop.html",AQ_census_query=AQ_census_query)
+    return render_template("countyvpop.html", AQ_census_query=AQ_census_query)
 
 @app.route("/current")
 def current():
@@ -54,7 +54,8 @@ def current():
 
 @app.route("/historical_form")
 def historical_form():
-    return render_template("historical_form.html")
+    AQ_census_query = get_SQL_AQ_census_query()
+    return render_template("historical_form.html", AQ_census_query=AQ_census_query)
 
 @app.route("/historical_map")
 def historical_map():

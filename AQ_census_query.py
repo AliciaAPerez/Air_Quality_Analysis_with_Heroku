@@ -27,18 +27,22 @@ AirQuality = create_classes_aq(db)
 #         Sites.Land_Use, Sites.Elevation, County.county_name, ).all()
 
 def get_SQL_AQ_census_query():
-    sites_results = db.session.query(Sites.site_no, Sites.CBSA_Name,\
+    # AQ_cenus_query = db.session.query(AirQuality)\
+    #     .join(Sites, AirQuality.site_no == Sites.site_no).all()
+        # .join(County, AirQuality.county_code == County.county_code)
+    
+    site_results = db.session.query(Sites.site_no, Sites.CBSA_Name,\
         Sites.Latitude,Sites.Longitude, Sites.Elevation,\
         Sites.Land_Use, Sites.Location_Setting, Sites.City_Name).all()
     
-    aq_results = db.session.query(AirQuality.county_code, AirQuality.Date,\
+    aq_results = db.session.query(AirQuality.site_no, AirQuality.county_code, AirQuality.Date,\
         AirQuality.Defining_Parameter, AirQuality.Category, AirQuality.AQI, \
-        AirQuality.site_no).all()
+        ).all()
     
     # aq_sites_merge_df = aq_results.merge(sites_results,on='site_no')
 
-    AQ_cenus_query = json.dumps([ row._asdict() for row in aq_results ])
+    AQ_census_query = json.dumps([ row._asdict() for row in aq_results])
     # print(AQ_cenus_query)
-    return AQ_cenus_query
+    return AQ_census_query
 
 get_SQL_AQ_census_query()
