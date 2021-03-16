@@ -9,7 +9,7 @@ from flask import (
     request,
     redirect)
 
-from models import create_classes
+from models import *
 from currentAQIData import get_csv
 from timelapse import *
 
@@ -24,7 +24,11 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # # Connects to the database using the app config
 db = SQLAlchemy(app)
 
-Sites = create_classes(db)
+Sites = create_classes_site(db)
+County = create_classes_county(db)
+CensusPopulation = create_classes_pop(db)
+year = create_classes_year(db)
+
 
 @app.route("/")
 def home():
@@ -71,7 +75,8 @@ def timelapse():
 
 @app.route("/yearlyvpop")
 def yearlyvpop():
-    return render_template("yearlyvpop.html")
+    AQ_census_query = get_SQL_AQ_census_query()
+    return render_template("yearlyvpop.html",AQ_census_query=AQ_census_query)
 
 @app.route("/currentAQIData")
 def csv():
@@ -81,18 +86,9 @@ def csv():
 def timelapseData():
     return get_timelapse()
 
-@app.route("/db_test")
-def db_test():
-    results = db.session.query(Sites).all()
-    print(results)
-    # aq_data = [{
-    #     "site_no": site_no,
-    #     "CBSA_Name": CBSA_Name,
-    #     "Latitude": Latitude,
-    #     "Longitude": Longitude,
-    # }]
-    # print(aq_data)
-    return jsonify(results)
+@app.route("/AQ_cenus_query")
+def return_SQL_AQ_census_query():
+    return get_SQL_AQ_census_query()
 
 if __name__ == '__main__':
     app.run(debug=True)
@@ -131,6 +127,3 @@ if __name__ == '__main__':
 # @register_menu(app, '.second', 'Second', order=1)
 # def second():
 #     return tmpl_show_menu()
-
-# if __name__ == '__main__':
-#     app.run(debug=True)
