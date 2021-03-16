@@ -7,13 +7,15 @@ from flask import (
     render_template,
     jsonify,
     request,
-    redirect)
+    redirect,
+    send_file)
 
 from models import *
 from currentAQIData import get_csv
 from folium.plugins import HeatMapWithTime
 from AQ_census_query import *
 from timelapse import *
+from countyvpopData import*
 
 app = Flask(__name__)
 # # Menu(app=app)
@@ -44,8 +46,8 @@ def home():
 
 @app.route("/countyvpop")
 def countryvpop():
-    AQ_census_query = get_SQL_AQ_census_query()
-    return render_template("countyvpop.html", AQ_census_query=AQ_census_query)
+    countyvpopData = pull_cvp_csv()
+    return render_template("countyvpop.html", countyvpopData=countyvpopData)
 
 @app.route("/current")
 def current():
@@ -54,8 +56,7 @@ def current():
 
 @app.route("/historical_form")
 def historical_form():
-    AQ_census_query = get_SQL_AQ_census_query()
-    return render_template("historical_form.html", AQ_census_query=AQ_census_query)
+    return render_template("historical_form.html")
 
 @app.route("/historical_map")
 def historical_map():
@@ -98,6 +99,21 @@ def timelapseData():
 @app.route("/AQ_cenus_query")
 def return_SQL_AQ_census_query():
     return get_SQL_AQ_census_query()
+
+@app.route('/getPlotCSV') # this is a job for GET, not POST
+def pull_csv():
+    return send_file('static/data/all_data.csv',
+        mimetype='text/csv',
+        attachment_filename='Adjacency.csv',
+        as_attachment=True)
+
+@app.route('/getcountyvpopCSV') # this is a job for GET, not POST
+def pull_cvp_csv():
+    return pull_cvp_csv()
+    # return send_file('static/data/countyvpop.csv',
+    #     mimetype='text/csv',
+    #     attachment_filename='Adjacency.csv',
+    #     as_attachment=True)
 
 if __name__ == '__main__':
     app.run(debug=True)

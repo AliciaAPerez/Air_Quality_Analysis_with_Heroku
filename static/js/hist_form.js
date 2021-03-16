@@ -1,5 +1,5 @@
 //import data
-d3.json("AQ_cenus_query").then(function(sqlaqiData) {
+d3.json("getPlotCSV").then(function(sqlaqiData) {
     console.log(sqlaqiData)
 });
 
