@@ -60,7 +60,8 @@
 				</div>
 			</div>
 		</div>
-		{{ map_id }}
+		<!--<div>{{ map_id }}</div> -->
+		{% include 'timelapse_static.html' %}
 
 <!--script for the drop down menu to work -->
 		<!-- Leaflet JS -->
@@ -79,5 +80,5 @@
 
     </body>
 	
-	{{ script_txt }}
+	<script>{{ script_txt }}</script>
 </html>
