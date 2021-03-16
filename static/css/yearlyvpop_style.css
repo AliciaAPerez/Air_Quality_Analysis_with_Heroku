@@ -40,3 +40,11 @@ h1 {
     text-align: center;
 }
 
+table{
+    background-color: lightblue;
+    text-align: center;
+    margin: auto;
+    border: solid black 3px;
+    border-spacing: 10px;
+    width: 100% !important;
+}

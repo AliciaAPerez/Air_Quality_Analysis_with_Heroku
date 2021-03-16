@@ -35,7 +35,7 @@ function buildPlot() {
     L.control.layers(baseMaps).addTo(map);
 
     // Creating Layer Control for Legend
-    const legend = L.control({position: 'bottomright'});
+    const legend = L.control({position: 'topright'});
         // Adding Legend to Map
         legend.onAdd = function (map) {
             const div = L.DomUtil.create('div', 'info legend'),
