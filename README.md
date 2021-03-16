@@ -17,7 +17,7 @@ This README will be broken down by product with a full description of the Back-E
 >- For more information on how to setup and launch the project on [Heroku](https://www.heroku.com/), click [here](#Setup).
 >- To get to know the developers of this website, click [here](#Developers).
 >- To get a brief overview of the Technologies, click [here](#Technologies).
->- Look for data sources? [here](#Data-Sources).
+>- Looking for data sources? [here](#Data-Sources).
 
 
 ## **Current Conditions**
