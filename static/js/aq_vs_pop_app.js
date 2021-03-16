@@ -1,6 +1,6 @@
 
-d3.json("AQ_cenus_query").then(function(Sites) {
-  console.log(Sites)
+d3.json("AQ_cenus_query").then(function(aqiData) {
+  console.log(aqiData)
 });
 
 //   d3.json("data/data.json").then((data) => {
