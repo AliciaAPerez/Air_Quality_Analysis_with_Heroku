@@ -62,11 +62,12 @@ def get_timelapse():
 
     # display base map with HeatMap 
     _ = folium_map._repr_html_()
-
-    map_id = Markup(folium_map.get_root().html.render())
+    map_id = folium_map._repr_html_()
+    #map_id = folium_map.get_root().render()
+    #    map_id = Markup(folium_map.get_root().html.render())
     hdr_txt = Markup(folium_map.get_root().header.render())
     script_txt = Markup(folium_map.get_root().script.render())
-
-    return([_, map_id, hdr_txt, script_txt])
+    folium_map.save("templates/timelapse_static.html")
+    return(map_id, hdr_txt, script_txt)
 
 get_timelapse()

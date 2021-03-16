@@ -8,7 +8,7 @@ from flask import (
     redirect)
 
 from flask import current_app
-from app import app
+import app
 from flask_sqlalchemy import SQLAlchemy
 from models import *
 
