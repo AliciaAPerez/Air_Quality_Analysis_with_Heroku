@@ -1,5 +1,5 @@
 
-d3.json("db_test").then(function(Sites) {
+d3.json("details").then(function(Sites) {
   console.log(Sites)
 });
 
