@@ -1,3 +1,4 @@
+import json
 from flask import (
     Flask,
     render_template_string,
@@ -11,14 +12,19 @@ from app import app
 from flask_sqlalchemy import SQLAlchemy
 from models import *
 
+
 db = SQLAlchemy(app)
 Sites = create_classes_site(db)
 County = create_classes_county(db)
+CensusPopulation = create_classes_pop(db)
+year = create_classes_year(db)
+DateYear = create_classes_dateyear(db)
+Defining_Parameter = create_classes_def_param(db)
+AirQuality = create_classes_year(db)
 
-# County = create_classes(db)
 
 def get_SQL_AQ_census_query():
-    results = db.session.query(Sites.CBSA_Name, Sites.Latitude,Sites.Longitude).all()
+    results = db.session.query(Sites.CBSA_Name, Sites.Latitude,Sites.Longitude, County.county_name).all()
     # print(results)
     # site_no = [result[0] for result in results]
     CBSA_Name = [result[0] for result in results]

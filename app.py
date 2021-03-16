@@ -12,17 +12,12 @@ from flask import (
 from models import *
 from currentAQIData import get_csv
 from folium.plugins import HeatMapWithTime
+from AQ_census_query import *
 from timelapse import *
 
 
 app = Flask(__name__)
 # # Menu(app=app)
-
-# # API KEY on HEROKU
-from boto.s3.connection import S3Connection
-s3 = S3Connection(os.environ['API_KEY'], os.environ['API_KEY_SECRET'])
-API_KEY = app.config['API_KEY']
-
 
 # # DATABASE_URL will contain the database connection string: HEROKU
 from flask_sqlalchemy import SQLAlchemy
@@ -35,6 +30,9 @@ Sites = create_classes_site(db)
 County = create_classes_county(db)
 CensusPopulation = create_classes_pop(db)
 year = create_classes_year(db)
+DateYear = create_classes_dateyear(db)
+Defining_Parameter = create_classes_def_param(db)
+AirQuality = create_classes_year(db)
 
 
 @app.route("/")
@@ -73,13 +71,12 @@ def sources():
 @app.route("/timelapse")
 def timelapse():
     details = get_timelapse()
-    return details[0]
-    # return render_template(
-    #     'timelapse.html',
-    #     map_id = details[0],
-    #     hdr_txt=details[1],
-    #     script_txt = details[2]
-    # )
+    return render_template(
+        'timelapse.html',
+        map_id = details[0],
+        hdr_txt=details[1],
+        script_txt = details[2]
+    )
 
 @app.route("/yearlyvpop")
 def yearlyvpop():
